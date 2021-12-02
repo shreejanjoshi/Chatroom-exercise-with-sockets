@@ -1,0 +1,19 @@
+{
+  "name": "chatroom-exercise-with-sockets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shreejanjoshi/Chatroom-exercise-with-sockets.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shreejanjoshi/Chatroom-exercise-with-sockets/issues"
+  },
+  "homepage": "https://github.com/shreejanjoshi/Chatroom-exercise-with-sockets#readme"
+}
