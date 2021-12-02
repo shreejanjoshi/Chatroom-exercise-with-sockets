@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        //So basically the server will be expecting another event. And once that other event comes in, data from that particular event will be passed to the console log.
+        const socket = io.connect('http://localhost:3000');
+        //So when we get a message from the server so remember the server is going to send us a message when we connect. Take the data that he's going to pass to us and console log it for now. put this inside of our HTML.
+        socket.on('message', (data) => {
+            console.log(data);
+            //So make sure that whatever event you put in here, if you want to emit to another event, you want to make sure that on the server that receives that message, has the same value here.
+            socket.emit('another event', { jem: 'I am great thank u' });
+        })
+    </script>
 </body>
+
 </html>
