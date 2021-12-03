@@ -14,18 +14,28 @@ server.listen(port, () =>{
 });
 const io = require('socket.io')(server);
 let counter = 0;
+
+const users= {};
+
 io.on('connection', (socket) => {
 
-    console.log(counter+' someone connected');
+    socket.on('newUser', name =>{
+        users[socket.id] = name;
+        socket.broadcast.emit(`userConnected`, name);
+    })
+
+    console.log(counter+' user connected');
     if ('connection'){
         counter++;
     }
-    socket.on('sendToAll', (message) =>{
-        io.emit("displayMessage", (message));
+    socket.on('sendToAll', message =>{
+        io.emit("displayMessage", {message: message, name:users[socket.id]});
+        // socket.broadcast.emit("displayMessage", {message: message, name:users[socket.id]});
     });
 
     socket.on('sendToMe', (message) =>{
-        socket.emit("displayMessage", (message));
+        // socket.emit("displayMessage", (message));
+        socket.emit("displayMessage", {message: message, name:users[socket.id]});
     });
 });
 
