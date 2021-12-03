@@ -1,23 +1,22 @@
-
-form{
+form {
     padding: 20px;
     position: fixed;
     bottom: 0;
     width: 100%;
     padding-right: 50px;
-}
+  }
 
-#messages{
+  #messages {
     list-style-type: none;
     margin: 0;
     padding: 0;
     width: 100%;
-}
+  }
 
-#messages li{
+  #messages li {
     padding: 5px 10px;
-}
+  }
 
-#messages li:nth-child(odd){
+  #messages li:nth-child(odd) {
     background: #eee;
-}
+  }
