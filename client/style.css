@@ -1,8 +1,16 @@
+body {
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+}
+
 form {
   padding: 20px;
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 1200px;
   padding-right: 50px;
 }
 
@@ -11,17 +19,31 @@ button{
   margin: 10px;
 }
 
+#message{
+  flex-grow: 1;
+}
+
 #messages {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  width: 80%;
+  max-width: 1200px;
 }
 
-#messages li {
-  padding: 5px 10px;
+#messages div {
+  background-color: #CCC;
+  padding: 5px;
 }
 
-#messages li:nth-child(odd) {
-  background: #eee;
+#messages div:nth-child(2n) {
+  background-color: #FFF;
 }
+
+#send-container {
+  position: fixed;
+  padding-bottom: 30px;
+  bottom: 0;
+  background-color: white;
+  max-width: 1200px;
+  width: 80%;
+  display: flex;
+}
+

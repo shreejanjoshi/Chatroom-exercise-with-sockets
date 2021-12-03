@@ -24,6 +24,13 @@ io.on('connection', (socket) => {
         socket.broadcast.emit(`userConnected`, name);
     })
 
+    // socket.on('allUser', names =>{
+    //     let allUser ='';
+    //     names.forEach(users[socket.id] => {
+    //         allUser += users.name;
+    //     });
+    // })
+
     console.log(counter+' user connected');
     if ('connection'){
         counter++;

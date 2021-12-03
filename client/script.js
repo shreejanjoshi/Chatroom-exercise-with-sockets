@@ -5,6 +5,15 @@ const messagesContainer = document.getElementById('messages');
 const name = prompt('What is your name?');
 sendMessage(`Hi ${name} you joined in chatroom`);
 socket.emit('newUser', name);
+socket.emit
+
+// socket.on('allUsers', user=>{
+
+//     user.forEach(users => {
+//         sendMessage(users.name);
+//     });
+// })
+// // 
 
 /*client*/
  
@@ -34,3 +43,10 @@ function sendMessage(message){
     messageElement.innerHTML = message; 
     messagesContainer.append(messageElement);
 }
+
+socket.on('showAllUsers', users =>{
+    let allUsers = "";
+    users.forEach(element => {
+        
+    });
+})
